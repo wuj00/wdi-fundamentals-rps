@@ -4,7 +4,7 @@
 'use strict';
 
 function getInput() {
-    console.log("Please choose either 'rock', 'paper', or 'scissors'.")
+    console.log("Please choose either 'rock', 'paper', or 'scissors'.");
     return prompt();
 }
 function randomPlay() {
@@ -58,9 +58,8 @@ function getWinner(playerMove,computerMove) {
         winner = 'Tie';
     } else if (playerMove === 'scissors' && computerMove === 'scissors') {
         winner = 'Tie';
-    } else {
-        return 'DOH!'
-    return winner;
+    } else
+        return 'DOH!';
 }
 
 function playToFive() {
@@ -68,6 +67,24 @@ function playToFive() {
     var playerWins = 0;
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
-    return [playerWins, computerWins];
+
+    var playerMove = getPlayerMove();
+    var computerMove = getComputerMove();
+    var winner = getWinner(playerMove,computerMove);
+    console.log('Player chose ' + playerMove + ' while computer chose ' + computerMove);
+
+    while (playerWins < 5 || computerWins < 5) {
+        if (getWinner(playerMove, computerMove) == "player")
+          playerWins += 1;
+    }
+        else if (getWinner(playerMove, computerMove) == 'computer') {
+          computerWins += 1;
 }
+    return [playerWins, computerWins] {
+    }
+
+    console.log('*ding!ding!ding!* The winner is ' + winner);
+    console.log('The score is currently ' + playerWins + ' to ' + computerWins + '/n');
+
+}
+playToFive();
